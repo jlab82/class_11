@@ -61,9 +61,8 @@ def edit_vehicles(vehicles):
 
 def export_txt(vehicles):
     file = open("vehicles.txt", "w+")
-    file.write("List of vehicles:\n")
     for clave, valor in enumerate(vehicles):
-        file.write(str(clave) + "- " + valor.get_full_name()+ "\n")
+        file.write(str(clave) + " " + valor.get_full_name()+ "\n")
 
 
 def main():
@@ -82,7 +81,7 @@ def main():
         print "e) Quit the program."
         print ""  # empty line
 
-        selection = raw_input("Enter your selection (a, b, c, or d): ")
+        selection = raw_input("Enter your selection (a, b, c, d or e): ")
         print ""  # empty line
 
         if selection.lower() == "a":
@@ -94,7 +93,8 @@ def main():
         elif selection.lower() == "d":
             export_txt(vehicles)
         elif selection.lower() == "e":
-            print "Thank you for using Contact List. Goodbye!"
+            export_txt(vehicles)
+            print "Thank you for using Vehicle Manager. Goodbye!"
             break
         else:
             print "Sorry, I didn't understand your selection. Please try again."
