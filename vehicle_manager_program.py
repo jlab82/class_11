@@ -62,10 +62,8 @@ def edit_vehicles(vehicles):
 def export_txt(vehicles):
     file = open("vehicles.txt", "w+")
     file.write("List of vehicles:\n")
-
-    for item in vehicles:
-        for pos in vehicles[item]:
-            print(vehicles[pos].get_full_name())
+    for clave, valor in enumerate(vehicles):
+        file.write(str(clave) + "- " + valor.get_full_name()+ "\n")
 
 
 def main():
