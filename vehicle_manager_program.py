@@ -8,8 +8,7 @@ class Vehicles:
         self.kmdsf = kmdsf
         self.gsdate = gsdate
     def get_full_name(self):
-        return "{} {} {} {}" .format(self.brand, self.model, self.gsdate, self.kmdsf)
-
+        return "{} {} {} {}" .format(self.brand, self.model, self.kmdsf, self.gsdate)
 
 
 #see a list of vehicles the company has
@@ -58,18 +57,29 @@ def edit_vehicles(vehicles):
     print "kilometers updated."
     # ... you can do the same for other fields.
 
-
+#export vehicles to list
 def export_txt(vehicles):
     file = open("vehicles.txt", "w+")
     for clave, valor in enumerate(vehicles):
-        file.write(str(clave) + " " + valor.get_full_name()+ "\n")
+        file.write(valor.get_full_name() + "\n")
 
+#import vehicles to list
+def import_txt():
+    archivo = open("vehicles.txt", "r")
+    car = ["a", "b"]
+    i = 0
+    for linea in archivo.readlines():
+        car[i] = linea.split()
+        i += 1
+    print car
 
+#main
 def main():
-    car1 = Vehicles(brand="Peugeot", model="407", kmdsf=250000, gsdate="10/12/2017", )
+    car1 = Vehicles(brand="Peugeote", model="407", kmdsf=250000, gsdate="10/12/2017", )
     car2 = Vehicles(brand="Opel", model="Vectra", kmdsf=52000, gsdate="25/12/2017", )
-
     vehicles = [car1, car2]
+
+    import_txt()
 
     while True:
         print ""  # empty line
