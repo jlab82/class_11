@@ -35,7 +35,7 @@ def add_new_vehicle(vehicles):
     vehicles.append(new)
 
     print ""  # empty line
-    print new.get_full_name() + " was successfully added to your contact list."
+    print new.get_full_name() + " was successfully added to your vehicle list."
 
 
 #edit kilometers and the general service date for each vehicle
